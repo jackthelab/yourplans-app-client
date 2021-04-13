@@ -1,3 +1,5 @@
+/* ************************* Classes ************************* */
+
 .App {
   text-align: center;
 }
@@ -27,4 +29,13 @@
   border-bottom-style: solid;
   border-bottom-width: .15rem;
   border-bottom-color: #f6f6f6;
+}
+
+/* ************************ IDs *************************** */
+
+#main-container {
+  background-color: #007965;
+  color: #f6f6f6;
+  margin: 2.5%;
+  padding: .5%;
 }
