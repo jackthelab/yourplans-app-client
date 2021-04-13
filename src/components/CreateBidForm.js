@@ -8,13 +8,13 @@ const CreateBidForm = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        alert(`A User tried creating a bid named ${inputName} for ${inputNumberOfPeople} with ${inputBudget}`)
+        alert(`A User tried creating an activity named ${inputName} for ${inputNumberOfPeople} people with a budget of $${inputBudget}`)
     }
 
     return (
         <>
 
-            <h1>Welcome Back!</h1>
+            <h1>Tell Us A Bit About Your Activity Needs</h1>
 
             <form onSubmit={(e) => handleSubmit(e)}>
             
@@ -39,7 +39,7 @@ const CreateBidForm = () => {
                 </div>
                   
                 <div className="submit-btn">
-                    <input className="btn cta-btn-inv" type="submit" value="Create Bid"/>
+                    <input className="btn cta-btn-inv" type="submit" value="Create Activity"/>
                 </div>
             </form>
 
