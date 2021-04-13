@@ -1,9 +1,14 @@
 import React from 'react'
 import logo from '../Resources/favicon-32x32.png'
+import { useSelector } from 'react-redux';
 
-import LoginButton from './LoginButton'
+import LoginButtons from '../containers/LoginButtons'
+import LoggedInButtons from '../containers/LoggedInButtons'
 
 const NavBar = () => {
+
+    const isLoggedIn = useSelector(state => state.loggedIn)
+
     return (
         <>
             <nav style={{ backgroundColor: "#007965", color: "#f6f6f6", paddingBottom: ".5rem", paddingTop: ".5rem" }}>
@@ -27,8 +32,7 @@ const NavBar = () => {
                             </ul>
                         </div>
                         <div className="col-md-4">
-                            <button className="btn cta-btn">Make A Plan!</button>
-                            <LoginButton />
+                            { isLoggedIn ? <LoggedInButtons /> : <LoginButtons /> }
                         </div>
                     </div>
                 </div>
