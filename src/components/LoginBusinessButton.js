@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { logIn, setBusinessType } from '../actions/index'
+import { logIn, setBusinessType, loginActivity } from '../actions/index'
 
 const LoginBusinessButton = () => {
 
@@ -10,6 +10,7 @@ const LoginBusinessButton = () => {
         <button onClick={() => {
             dispatch(logIn())
             dispatch(setBusinessType())
+            dispatch(loginActivity())
         }} className="btn cta-btn">Login Business Account</button>
     )
 }

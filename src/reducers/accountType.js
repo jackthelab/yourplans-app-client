@@ -7,7 +7,7 @@ const accountTypeReducer = (state = null, action) => {
         case 'RESET':
             return state = null;
         default:
-            return state = null;
+            return state;
     }
 }
 
