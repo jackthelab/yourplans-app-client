@@ -20,6 +20,43 @@
 .cta-btn:hover {
   background-color: #007965;
   color: #f6f6f6;
+  font-weight: bold;
+  border-left-style: solid;
+  border-left-width: .5rem;
+  border-left-color: #f6f6f6;
+  border-right-style: solid;
+  border-right-width: .5rem;
+  border-right-color: #f6f6f6;
+}
+
+.cta-btn-inv {
+  color: #f6f6f6;
+  background-color: #007965;
+  margin-right: .5rem;
+  font-size: small;
+}
+
+.cta-btn-inv:hover {
+  background-color: #f6f6f6;
+  color: #007965;
+  font-weight: bold;
+  border-left-style: solid;
+  border-left-width: .5rem;
+  border-left-color: #007965;
+  border-right-style: solid;
+  border-right-width: .5rem;
+  border-right-color: #007965;
+}
+
+.sect-col {
+  background-color: #f6f6f6;
+  color: #007965;
+  border-style: solid;
+  border-width: .25rem;
+  border-color: #007965;
+  padding: .25rem;
+  border-radius: 25px;
+  height: 25rem;
 }
 
 .logo-text {
@@ -31,6 +68,10 @@
   border-bottom-color: #f6f6f6;
 }
 
+.submit-btn {
+  margin-top: 1rem;
+}
+
 /* ************************ IDs *************************** */
 
 #main-container {
@@ -38,4 +79,5 @@
   color: #f6f6f6;
   margin: 2.5%;
   padding: .5%;
+  /* border-radius: 25px; */
 }
