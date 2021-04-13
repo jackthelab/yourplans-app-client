@@ -1,5 +1,4 @@
 import React from 'react'
-import { Nav, Navbar } from 'react-bootstrap'
 import logo from '../Resources/favicon-32x32.png'
 
 import LoginButton from './LoginButton'
