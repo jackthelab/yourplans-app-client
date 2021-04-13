@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux'
 import LandingPage from './LandingPage'
 import UserLoginPage from './UserLoginPage'
 import BusinessLoginPage from './BusinessLoginPage'
-// import UserProfilePage from './UserProfilePage'
-// import BusinessProfilePage from './BusinessProfilePage'
+import UserProfilePage from './UserProfilePage'
+import BusinessProfilePage from './BusinessProfilePage'
 
 const Main = () => {
 
@@ -17,8 +17,8 @@ const Main = () => {
         <div id="main-container">
 
             {accountType === null && activityType === null ? <LandingPage /> : null}
-            {accountType === "user" && activityType === "login" ? <UserLoginPage /> : accountType === "user" && activityType === "createBid" ? <h1>A User wants to {`${activityType}`}</h1> : null }
-            {accountType === "business" && activityType === "login" ? <BusinessLoginPage /> : accountType === "business" ? <h1>A business want to {`${activityType}`}</h1> : null }
+            {accountType === "user" && activityType === "login" ? <UserLoginPage /> : accountType === "user" && activityType === "createBid" ? <UserProfilePage /> : null }
+            {accountType === "business" && activityType === "login" ? <BusinessLoginPage /> : accountType === "business" && activityType === "createBid" ? <BusinessProfilePage /> : null }
 
         </div>
     )
