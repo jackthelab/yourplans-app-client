@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setProfile } from '../actions/index'
 
 const BusinessLoginForm = () => {
 
@@ -7,7 +9,37 @@ const BusinessLoginForm = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        alert(`A Business tried logging in with ${e.target.email.value} and ${e.target.password.value !== '' ? 'a password' : 'without a password'}`)
+        // alert(`A Business tried logging in with ${inputEmail} and ${inputPassword !== '' ? 'a password' : 'without a password'}`)
+
+        const reqObj = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                business: {
+                    email: inputEmail,
+                    password: inputPassword
+                }
+            })
+        }
+
+        fetch('http://localhost:3000/api/v1/businesses/login', reqObj)
+            .then(r => r.json())
+            .then(resData => {
+                // console.log(resData)
+                fetchBusinessProfile(resData.jwt)
+            })
+    }
+
+    const dispatch = useDispatch()
+
+    const fetchBusinessProfile = (resToken) => {
+        fetch('http://localhost:3000/api/v1/businesses/profile', {headers: {Authorization: `Bearer ${resToken}`}})
+            .then(r => r.json())
+            .then(resData => {
+                dispatch(setProfile(resData))
+            })
     }
 
     return (

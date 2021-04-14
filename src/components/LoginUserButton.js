@@ -8,9 +8,9 @@ const LoginUserButton = () => {
 
     return (
         <button onClick={() => {
-            dispatch(logIn())
+            // dispatch(logIn())
             dispatch(setUserType())
-            dispatch(loginActivity())
+            // dispatch(loginActivity())
         }} className="btn cta-btn">Login Personal Account</button>
     )
 }

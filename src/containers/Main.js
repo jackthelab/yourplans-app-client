@@ -5,20 +5,21 @@ import { useSelector } from 'react-redux'
 import LandingPage from './LandingPage'
 import UserLoginPage from './UserLoginPage'
 import BusinessLoginPage from './BusinessLoginPage'
-import UserProfilePage from './UserProfilePage'
-import BusinessProfilePage from './BusinessProfilePage'
+// import UserProfilePage from './UserProfilePage'
+// import BusinessProfilePage from './BusinessProfilePage'
 
 const Main = () => {
 
     const accountType = useSelector(state => state.accountType)
-    const activityType = useSelector(state => state.activityType)
+    // const activityType = useSelector(state => state.activityType)
+    const profileDetails = useSelector(state => state.profile)
 
     return (
         <div id="main-container">
 
-            {accountType === null && activityType === null ? <LandingPage /> : null}
-            {accountType === "user" && activityType === "login" ? <UserLoginPage /> : accountType === "user" && activityType === "createBid" ? <UserProfilePage /> : null }
-            {accountType === "business" && activityType === "login" ? <BusinessLoginPage /> : accountType === "business" && activityType === "createBid" ? <BusinessProfilePage /> : null }
+            { accountType === null ? <LandingPage /> : null }
+            { accountType === "user" ? <UserLoginPage /> : null }
+            { accountType === "business" ? <BusinessLoginPage /> : null }
 
         </div>
     )

@@ -1,8 +1,8 @@
-export const logIn = () => {
-    return {
-        type: 'SIGN_IN'
-    }
-}
+// export const logIn = () => {
+//     return {
+//         type: 'SIGN_IN'
+//     }
+// }
 
 //account type actions
 
@@ -26,20 +26,35 @@ export const resetAccountType = () => {
 
 // activity actions
 
-export const resetActivity = () => {
+// export const resetActivity = () => {
+//     return {
+//         type: 'RESET'
+//     }
+// }
+// 
+// export const loginActivity = () => {
+//     return {
+//         type: 'LOGIN'
+//     }
+// }
+
+// export const createBid = () => {
+//     return {
+//         type: 'CREATE_BID'
+//     }
+// }
+
+// profile actions
+
+export const setProfile = (profObj) => {
     return {
-        type: 'RESET'
+        type: 'SET_PROFILE',
+        profilePayload: profObj
     }
 }
 
-export const loginActivity = () => {
-    return {
-        type: 'LOGIN'
-    }
-}
-
-export const createBid = () => {
-    return {
-        type: 'CREATE_BID'
-    }
-}
+// export const resetProfile = () => {
+//     return {
+//         type: 'RESET_PROFILE'
+//     }
+// }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { logIn, resetAccountType, resetActivity } from '../actions/index'
+import { logIn, resetAccountType, resetActivity, resetProfile } from '../actions/index'
 
 const LogOutButton = () => {
     
@@ -8,9 +8,10 @@ const LogOutButton = () => {
 
     return (
         <button onClick={() => {
-            dispatch(logIn())
+            // dispatch(logIn())
             dispatch(resetAccountType())
-            dispatch(resetActivity())
+            // dispatch(resetActivity())
+            // dispatch(resetProfile())
         }} className="btn btn-danger cta-btn">Log Out</button>
     )
 }

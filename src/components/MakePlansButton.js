@@ -1,12 +1,12 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { createBid } from '../actions/index'
+// import { createBid } from '../actions/index'
 
 const MakePlansButton = () => {
 
     const accountType = useSelector(state => state.accountType)
     
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     const handleClick = () => {
         if(accountType === "user"){
@@ -17,7 +17,7 @@ const MakePlansButton = () => {
             console.log("There is no account type chosen right now.")
         }
         
-        dispatch(createBid())
+        // dispatch(createBid())
     }
 
     return (

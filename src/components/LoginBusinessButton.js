@@ -8,9 +8,9 @@ const LoginBusinessButton = () => {
 
     return (
         <button onClick={() => {
-            dispatch(logIn())
+            // dispatch(logIn())
             dispatch(setBusinessType())
-            dispatch(loginActivity())
+            // dispatch(loginActivity())
         }} className="btn cta-btn">Login Business Account</button>
     )
 }

@@ -7,7 +7,7 @@ import LoggedInButtons from '../containers/LoggedInButtons'
 
 const NavBar = () => {
 
-    const isLoggedIn = useSelector(state => state.loggedIn)
+    // const isLoggedIn = useSelector(state => state.loggedIn)
 
     return (
         <>
@@ -32,7 +32,8 @@ const NavBar = () => {
                             </ul>
                         </div>
                         <div className="col-md-4">
-                            { isLoggedIn ? <LoggedInButtons /> : <LoginButtons /> }
+                            {/* { isLoggedIn ? <LoggedInButtons /> : <LoginButtons /> } */}
+                            <LoginButtons />
                         </div>
                     </div>
                 </div>

@@ -1,13 +1,44 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setProfile } from '../actions/index'
 
 const UserLoginForm = () => {
 
     const [inputEmail, setInputEmail] = useState('')
     const [inputPassword, setInputPassword] = useState('')
+
+    const dispatch = useDispatch()
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        alert(`A User tried logging in with ${e.target.email.value} and ${e.target.password.value !== '' ? 'a password' : 'without a password'}`)
+        // alert(`A User tried logging in with ${e.target.email.value} and ${e.target.password.value !== '' ? 'a password' : 'without a password'}`)
+        const reqObj = {
+            headers: {"Content-Type": "application/json"},
+            method: "POST",
+            body: JSON.stringify({
+                "user": {
+                    "email": inputEmail,
+                    "password": inputPassword
+                }
+            })
+        }
+
+        // debugger
+        
+        fetch('http://localhost:3000/api/v1/users/login', reqObj)
+            .then(r => r.json())
+            .then(resData => {
+                // console.log(resData)
+                fetchUserProfile(resData.jwt)
+            })
+    }
+
+    const fetchUserProfile = (resToken) => {
+        fetch('http://localhost:3000/api/v1/users/profile', {headers: {Authorization: `Bearer ${resToken}`}})
+            .then(r => r.json())
+            .then(resData => {
+                dispatch(setProfile(resData))
+            })
     }
 
     return (
