@@ -27,6 +27,7 @@ const BusinessLoginForm = () => {
             .then(r => r.json())
             .then(resData => {
                 fetchBusinessProfile(resData.jwt)
+                localStorage.token = resData.jwt
             })
     }
 

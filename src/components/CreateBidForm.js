@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import {useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setActivity } from '../actions/index'
 
 const CreateBidForm = () => {
 
@@ -12,6 +13,8 @@ const CreateBidForm = () => {
     const [inputDate, setInputDate] = useState(new Date())
 
     const user = useSelector(state => state.profile)
+    
+    const dispatch = useDispatch()
     
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -37,12 +40,11 @@ const CreateBidForm = () => {
             })
         }
 
-        // console.log(reqObj)
-
         fetch(`http://localhost:3000/api/v1/users/${user.id}/bids`, reqObj)
             .then(res => res.json())
             .then(resData => {
                 console.log(resData)
+                dispatch(setActivity(null))
             })
     }
 

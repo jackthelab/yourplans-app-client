@@ -10,6 +10,9 @@ const LogOutButton = () => {
         <button onClick={() => {
             dispatch(setAccountType(null))
             dispatch(setProfile(null))
+            localStorage.token = null
+            localStorage.id = null
+            localStorage.loggedIn = false
         }} className="btn btn-danger cta-btn">Log Out</button>
     )
 }
