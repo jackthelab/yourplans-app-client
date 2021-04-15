@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import DatePicker from 'react-datepicker'
+import {useSelector } from 'react-redux'
 
 const CreateBidForm = () => {
 
@@ -8,11 +8,79 @@ const CreateBidForm = () => {
     const [inputState, setInputState] = useState(null)
     const [inputNumberOfPeople, setInputNumberOfPeople] = useState(1)
     const [inputBudget, setInputBudget] = useState(20)
+    const [inputNotes, setInputNotes] = useState(null)
     const [inputDate, setInputDate] = useState(new Date())
+
+    const user = useSelector(state => state.profile)
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        alert(`A User tried creating an activity named ${inputName} for ${inputNumberOfPeople} people with a budget of $${inputBudget}`)
+
+        const reqObj = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.token}`
+            },
+            method: "POST",
+            body: JSON.stringify({
+                bid: {
+                    user_id: user.id,
+                    name: inputName,
+                    city: inputCity,
+                    state: inputState,
+                    num_in_party: inputNumberOfPeople,
+                    budget: inputBudget,
+                    notes: inputNotes,
+                    open_status: true,
+                    date: inputDate
+                }
+            })
+        }
+
+        // console.log(reqObj)
+
+        fetch(`http://localhost:3000/api/v1/users/${user.id}/bids`, reqObj)
+            .then(res => res.json())
+            .then(resData => {
+                console.log(resData)
+            })
+    }
+
+    const minDate = () => {
+        const dateObj = new Date()
+        const dateArr = dateObj.toString().split(' ')
+        let month = null
+        let day = dateArr[2]
+        let year = dateArr[3]
+
+        if(dateArr[1] === "Jan"){
+            month = "01"
+        } else if(dateArr[1] === "Feb"){
+            month = "02"
+        } else if(dateArr[1] === "Mar"){
+            month = "03"
+        } else if(dateArr[1] === "Apr"){
+            month = "04"
+        } else if(dateArr[1] === "May"){
+            month = "05"
+        } else if(dateArr[1] === "Jun"){
+            month = "06"
+        } else if(dateArr[1] === "Jul"){
+            month = "07"
+        } else if(dateArr[1] === "Aug"){
+            month = "08"
+        } else if(dateArr[1] === "Sep"){
+            month = "09"
+        } else if(dateArr[1] === "Oct"){
+            month = "10"
+        } else if(dateArr[1] === "Nov"){
+            month = "11"
+        } else if(dateArr[1] === "Dec"){
+            month = "12"
+        }
+
+        return `${year}-${month}-${day}`
+
     }
 
     return (
@@ -110,15 +178,14 @@ const CreateBidForm = () => {
                     <label>Notes (Allergies, Any Restrictions, etc.)</label>
                 </div>
                 <div>
-                    <input type="textarea"></input>
+                    <input type="textarea" onChange={ (e) => setInputNotes(e.target.value) } />
                 </div>
-                {/* <div>
+                <div>
                     <label>Date</label>
                 </div>
                 <div>
-                    {/* <input type="date" min={new Date()} value={inputDate} onChange={(e) => setInputDate(e.target.value)} /> */}
-                    {/* <DatePicker selected={inputDate} minDate={new Date()} onChange={date => setInputDate(date)} /> */}
-                {/* </div> */}
+                    <input type="date" min={minDate()} value={inputDate} onChange={(e) => { setInputDate(e.target.value) }} />
+                </div>
                 <div className="submit-btn">
                     <input className="btn cta-btn-inv" type="submit" value="Create Activity"/>
                 </div>

@@ -27,6 +27,7 @@ const UserLoginForm = () => {
             .then(r => r.json())
             .then(resData => {
                 fetchUserProfile(resData.jwt)
+                localStorage.token = resData.jwt
             })
     }
 
