@@ -6,23 +6,30 @@
 
 //account type actions
 
-export const setUserType = () => {
+// export const setUserType = () => {
+//     return {
+//         type: 'USER'
+//     }
+// }
+
+// export const setBusinessType = () => {
+//     return {
+//         type: 'BUSINESS'
+//     }
+// }
+
+export const setAccountType = (accountType) => {
     return {
-        type: 'USER'
+        type: 'SET_ACCOUNT_TYPE',
+        accountPayload: accountType
     }
 }
 
-export const setBusinessType = () => {
-    return {
-        type: 'BUSINESS'
-    }
-}
-
-export const resetAccountType = () => {
-    return {
-        type: 'RESET'
-    }
-}
+// export const resetAccountType = () => {
+//     return {
+//         type: 'RESET'
+//     }
+// }
 
 // activity actions
 
@@ -31,16 +38,23 @@ export const resetAccountType = () => {
 //         type: 'RESET'
 //     }
 // }
-// 
-// export const loginActivity = () => {
-//     return {
-//         type: 'LOGIN'
-//     }
-// }
+
+export const setActivity = (activity) => {
+    return {
+        type: 'SET_ACTIVITY',
+        activityPayload: activity
+    }
+}
 
 // export const createBid = () => {
 //     return {
 //         type: 'CREATE_BID'
+//     }
+// }
+
+// export const bidResponse = () => {
+//     return {
+//         type: 'BID_RESPONSE'
 //     }
 // }
 
@@ -52,9 +66,3 @@ export const setProfile = (profObj) => {
         profilePayload: profObj
     }
 }
-
-// export const resetProfile = () => {
-//     return {
-//         type: 'RESET_PROFILE'
-//     }
-// }

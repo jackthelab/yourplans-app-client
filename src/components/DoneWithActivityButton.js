@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { setActivity } from '../actions/index'
 
-const MakePlansButton = () => {
+const DoneWithActivityButton = () => {
     
     const dispatch = useDispatch()
 
@@ -10,12 +10,12 @@ const MakePlansButton = () => {
 
     const handleClick = () => {
         // alert(`A ${accountType} would like to make plans`)
-        dispatch(setActivity('createBid'))
+        dispatch(setActivity(null))
     }
 
     return (
-        <button onClick={() => handleClick()} className="btn cta-btn-inv">Make A Plan!</button>
+        <button onClick={() => handleClick()} className="btn cta-btn-inv">Quit Activity</button>
     )
 }
 
-export default MakePlansButton
+export default DoneWithActivityButton

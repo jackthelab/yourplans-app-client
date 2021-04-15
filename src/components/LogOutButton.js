@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { resetAccountType, setProfile } from '../actions/index'
+import { setAccountType, setProfile } from '../actions/index'
 
 const LogOutButton = () => {
     
@@ -9,7 +9,7 @@ const LogOutButton = () => {
     return (
         <button onClick={() => {
             // dispatch(logIn())
-            dispatch(resetAccountType())
+            dispatch(setAccountType(null))
             dispatch(setProfile(null))
             // dispatch(resetActivity())
             // dispatch(resetProfile())

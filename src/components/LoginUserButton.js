@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { setProfile, setUserType } from '../actions/index'
+import { setProfile, setAccountType } from '../actions/index'
 
 const LoginUserButton = () => {
 
@@ -8,10 +8,8 @@ const LoginUserButton = () => {
 
     return (
         <button onClick={() => {
-            // dispatch(logIn())
-            dispatch(setUserType())
+            dispatch(setAccountType('user'))
             dispatch(setProfile(null))
-            // dispatch(loginActivity())
         }} className="btn cta-btn">Login Personal Account</button>
     )
 }

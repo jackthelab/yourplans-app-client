@@ -1,21 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 
 //components
 import CreateBidForm from '../components/CreateBidForm'
+import MakePlansButton from '../components/MakePlansButton'
+import DoneWithActivityButton from '../components/DoneWithActivityButton'
+
+//containers
+import UserProfileHome from './UserProfileHome'
 
 const UserProfilePage = () => {
 
-    // const activityType = useSelector(state => state.activityType)
     const profileDetails = useSelector(state => state.profile)
+    const activity = useSelector(state => state.activity)
 
     return (
 
         <div className="sect-col" style={{ height: "auto" }}>
 
-            {/* { !profileDetails.id ? <h1>Need to login!</h1> : <h1>{`${profileDetails}`}</h1> }
-            { activityType === "createBid" && profileDetails ? <CreateBidForm /> : null } */}
-            { profileDetails ? <h1>{`Welcome to your personal profile, ${profileDetails.first_name}!`}</h1> : null }
+            { activity === 'createBid' ? <DoneWithActivityButton /> : <MakePlansButton /> }
+            { profileDetails ? activity === 'createBid' ? <CreateBidForm /> : <UserProfileHome /> : null }
 
         </div>
 
