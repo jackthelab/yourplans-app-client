@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux'
 import LandingPage from './LandingPage'
 import UserLoginPage from './UserLoginPage'
 import BusinessLoginPage from './BusinessLoginPage'
-// import UserProfilePage from './UserProfilePage'
-// import BusinessProfilePage from './BusinessProfilePage'
+import UserProfilePage from './UserProfilePage'
+import BusinessProfilePage from './BusinessProfilePage'
 
 const Main = () => {
 
@@ -18,8 +18,8 @@ const Main = () => {
         <div id="main-container">
 
             { accountType === null ? <LandingPage /> : null }
-            { accountType === "user" ? <UserLoginPage /> : null }
-            { accountType === "business" ? <BusinessLoginPage /> : null }
+            { accountType === "user" ? profileDetails ? <UserProfilePage /> : <UserLoginPage /> : null }
+            { accountType === "business" ? profileDetails ? <BusinessProfilePage /> : <BusinessLoginPage /> : null }
 
         </div>
     )
