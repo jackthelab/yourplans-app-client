@@ -11,7 +11,6 @@ import BusinessProfilePage from './BusinessProfilePage'
 const Main = () => {
 
     const accountType = useSelector(state => state.accountType)
-    // const activityType = useSelector(state => state.activityType)
     const profileDetails = useSelector(state => state.profile)
 
     return (

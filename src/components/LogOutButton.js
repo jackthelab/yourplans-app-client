@@ -8,11 +8,8 @@ const LogOutButton = () => {
 
     return (
         <button onClick={() => {
-            // dispatch(logIn())
             dispatch(setAccountType(null))
             dispatch(setProfile(null))
-            // dispatch(resetActivity())
-            // dispatch(resetProfile())
         }} className="btn btn-danger cta-btn">Log Out</button>
     )
 }

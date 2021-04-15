@@ -11,7 +11,6 @@ const UserSignUpForm = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        // alert(`A User tried creating an account with ${inputEmail} and ${inputPassword !== '' ? 'a password' : 'without a password'}`)
         const reqObj = {
             method: "POST",
             headers: {
@@ -30,7 +29,6 @@ const UserSignUpForm = () => {
         fetch('http://localhost:3000/api/v1/users', reqObj)
             .then(r => r.json())
             .then(resData => {
-                // console.log(resData)
                 fetchUserProfile(resData.jwt)
             })
     }

@@ -4,14 +4,12 @@ import { useSelector } from 'react-redux';
 
 // containers
 import LoginButtons from '../containers/LoginButtons'
-// import LoggedInButtons from '../containers/LoggedInButtons'
 
 // components
 import LogOutButton from './LogOutButton'
 
 const NavBar = () => {
 
-    // const isLoggedIn = useSelector(state => state.loggedIn)
     const profileDetails = useSelector(state => state.profile)
 
     return (
@@ -37,7 +35,6 @@ const NavBar = () => {
                             </ul>
                         </div>
                         <div className="col-md-4">
-                            {/* { isLoggedIn ? <LoggedInButtons /> : <LoginButtons /> } */}
                             { profileDetails ? <LogOutButton /> : <LoginButtons /> }
                         </div>
                     </div>

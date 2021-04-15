@@ -8,10 +8,8 @@ const LoginBusinessButton = () => {
 
     return (
         <button onClick={() => {
-            // dispatch(logIn())
             dispatch(setProfile(null))
             dispatch(setAccountType('business'))
-            // dispatch(loginActivity())
         }} className="btn cta-btn">Login Business Account</button>
     )
 }

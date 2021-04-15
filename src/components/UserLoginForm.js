@@ -11,7 +11,7 @@ const UserLoginForm = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        // alert(`A User tried logging in with ${e.target.email.value} and ${e.target.password.value !== '' ? 'a password' : 'without a password'}`)
+
         const reqObj = {
             headers: {"Content-Type": "application/json"},
             method: "POST",
@@ -22,13 +22,10 @@ const UserLoginForm = () => {
                 }
             })
         }
-
-        // debugger
         
         fetch('http://localhost:3000/api/v1/users/login', reqObj)
             .then(r => r.json())
             .then(resData => {
-                // console.log(resData)
                 fetchUserProfile(resData.jwt)
             })
     }

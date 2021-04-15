@@ -14,7 +14,6 @@ const BusinessSignUpForm = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        // alert(`A User tried logging in with ${inputEmail} and ${inputPassword !== '' ? 'a password' : 'without a password'}`)
         const reqObj = {
             method: "POST",
             headers: {
@@ -36,7 +35,6 @@ const BusinessSignUpForm = () => {
         fetch('http://localhost:3000/api/v1/businesses', reqObj)
             .then(r => r.json())
             .then(resData => {
-                // console.log(resData)
                 fetchBusinessProfile(resData.jwt)
             })
     }
