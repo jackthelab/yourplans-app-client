@@ -10,9 +10,14 @@ const BusinessProfilePage = () => {
 
     return (
 
-        <div className="sect-col" style={{ height: "auto" }}>
+        <div className="container" style={{ height: "auto" }}>
 
-            { profileDetails ? <h1>{`Welcome to your business profile, ${profileDetails.name}`}</h1> : null }
+            <div className="row">
+                <h1>{`Welcome, ${profileDetails.name}`}</h1>
+            </div>
+            <div className="row">
+                { profileDetails ? <h1>{`Welcome to your business profile, ${profileDetails.name}`}</h1> : null }
+            </div>
 
         </div>
 

@@ -86,7 +86,7 @@ const CreateBidForm = () => {
     }
 
     return (
-        <>
+        <div className="col-md-12 sect-col">
 
             <h1>Tell Us About What You Need</h1>
 
@@ -194,7 +194,7 @@ const CreateBidForm = () => {
 
             </form>
 
-        </>
+        </div>
     )
 
 }
