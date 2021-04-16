@@ -30,7 +30,7 @@ const UserSignUpForm = () => {
             .then(r => r.json())
             .then(resData => {
                 fetchUserProfile(resData.jwt)
-                localStorage.toke = resData.jwt
+                localStorage.token = resData.jwt
             })
     }
 
