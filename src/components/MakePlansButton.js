@@ -11,7 +11,7 @@ const MakePlansButton = () => {
     }
 
     return (
-        <button onClick={() => handleClick()} className="btn cta-btn-inv">Make A Plan!</button>
+        <button onClick={() => handleClick()} className="btn cta-btn">Make A Plan!</button>
     )
 }
 

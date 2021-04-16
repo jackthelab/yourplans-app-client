@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { setAccountType, setProfile } from '../actions/index'
+import { setAccountType, setProfile, setActivity } from '../actions/index'
 
 const LogOutButton = () => {
     
@@ -10,6 +10,7 @@ const LogOutButton = () => {
         <button onClick={() => {
             dispatch(setAccountType(null))
             dispatch(setProfile(null))
+            dispatch(setActivity(null))
             localStorage.token = null
             localStorage.id = null
             localStorage.loggedIn = false

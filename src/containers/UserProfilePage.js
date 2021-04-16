@@ -16,10 +16,16 @@ const UserProfilePage = () => {
 
     return (
 
-        <div className="sect-col" style={{ height: "auto" }}>
+        <div className="container" style={{ height: "auto" }}>
+
+            <div className="row">
+                { profileDetails ? <h1>{`Welcome, ${profileDetails.first_name}!`}</h1> : null }
+            </div>
+            <div className="row">
+                { profileDetails ? activity === 'createBid' ? <CreateBidForm /> : <UserProfileHome /> : null }
+            </div>
 
             { activity === 'createBid' ? <DoneWithActivityButton /> : <MakePlansButton /> }
-            { profileDetails ? activity === 'createBid' ? <CreateBidForm /> : <UserProfileHome /> : null }
 
         </div>
 

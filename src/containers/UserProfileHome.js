@@ -1,12 +1,23 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+// containers
+import UserBidsContainer from './UserBidsContainer'
+import UserExperiencesContainer from './UserExperiencesContainer'
+
 const UserProfileHome = () => {
 
     const profileDetails = useSelector(state => state.profile)
 
     return (
-        <h1>{`Welcome to your personal account, ${profileDetails.first_name}!`}</h1>
+        <>
+            <div className="col-md-6 sect-col">
+                <UserBidsContainer bids={profileDetails.bids} />
+            </div>
+            <div className="sect-col col-md-6">
+                <UserExperiencesContainer experiences={profileDetails.experiences} />
+            </div>
+        </>
     )
 
 }

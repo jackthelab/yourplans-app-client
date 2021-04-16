@@ -11,7 +11,7 @@ const DoneWithActivityButton = () => {
     }
 
     return (
-        <button onClick={() => handleClick()} className="btn cta-btn-inv">Quit Activity</button>
+        <button onClick={() => handleClick()} className="btn cta-btn">Quit Activity</button>
     )
 }
 

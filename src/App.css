@@ -33,6 +33,7 @@
   color: #f6f6f6;
   background-color: #007965;
   margin-right: .5rem;
+  margin-top: .5rem;
   font-size: small;
 }
 
@@ -71,6 +72,15 @@
 
 .submit-btn {
   margin-top: 1rem;
+}
+
+.sm-bid-card {
+  background-color: #007965;
+  color: #f6f6f6;
+  border-top: none;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ************************ IDs *************************** */
