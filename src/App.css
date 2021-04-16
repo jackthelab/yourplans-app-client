@@ -59,6 +59,8 @@
   border-radius: 25px;
   height: 25rem;
   overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo-text {

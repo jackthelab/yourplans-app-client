@@ -2,9 +2,12 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 // import { setActivity } from '../actions/index'
 
+//containers
+import BusinessProfileHome from './BusinessProfileHome'
+
 const BusinessProfilePage = () => {
 
-    // const activityType = useSelector(state => state.activity)
+    const activityType = useSelector(state => state.activity)
     // const dispatch = useDispatch()
     const profileDetails = useSelector(state => state.profile)
 
@@ -16,7 +19,7 @@ const BusinessProfilePage = () => {
                 <h1>{`Welcome, ${profileDetails.name}`}</h1>
             </div>
             <div className="row">
-                { profileDetails ? <h1>{`Welcome to your business profile, ${profileDetails.name}`}</h1> : null }
+                { activityType !== "bidResponse" ? <BusinessProfileHome /> : null }
             </div>
 
         </div>
