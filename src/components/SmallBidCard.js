@@ -9,7 +9,7 @@ const SmallBidCard = ({ bid, idx }) => {
     const activity = useSelector(state => state.activity)
 
     return (
-        <div key={idx} className="col-md-6 sm-bid-card">
+        <div key={idx} className="col-md-8 sm-bid-card">
             <h6>{ bid.name }</h6>
             <p>{ `Budget: $${bid.budget}` }</p>
             <p>{ `Party Size: ${bid.num_in_party}` }</p>

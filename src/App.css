@@ -82,10 +82,35 @@
   font-size: small;
   background-color: #007965;
   color: #f6f6f6;
-  border-top: none;
+  border-style: none;
   border-radius: 5px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+}
+
+.full-bid-card {
+  background-color: #007965;
+  color: #f6f6f6;
+  margin: .5rem auto .5rem auto;
+  width: 90%;
+  border-style: none;
+  border-radius: 5px;
+}
+
+.full-bid-card h6 {
+  border-bottom-style: solid;
+  border-bottom-width: .1rem;
+  border-bottom-color: #f6f6f6;
+}
+
+.full-bid-card p {
+  font-size: small;
+}
+
+.full-bid-card hr {
+  color: #f6f6f6;
 }
 
 /* ************************ IDs *************************** */
