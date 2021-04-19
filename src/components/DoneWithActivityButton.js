@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { setActivity } from '../actions/index'
+import { setActivity, setBid } from '../actions/index'
 
 const DoneWithActivityButton = () => {
     
@@ -8,6 +8,7 @@ const DoneWithActivityButton = () => {
 
     const handleClick = () => {
         dispatch(setActivity(null))
+        dispatch(setBid(null))
     }
 
     return (

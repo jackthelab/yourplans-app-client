@@ -1,10 +1,16 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 // containers
 import AvailableBidsContainer from './AvailableBidsContainer'
 import SelectedBidDetailsContainer from './SelectedBidDetailsContainer'
 
+//components
+import BidResponseForm from '../components/BidResponseForm'
+
 const BusinessBidResponse = ({ availableBids }) => {
+
+    const bid = useSelector(state => state.selectedBid)
 
     return(
 
@@ -15,10 +21,10 @@ const BusinessBidResponse = ({ availableBids }) => {
             </div>
             <div className="sect-col col-md-3">
                 <SelectedBidDetailsContainer />
-                {/* <h2>Selected Bid Details</h2> */}
             </div>
             <div className="sect-col col-md-6">
-                <h2>Response Form</h2>
+                {/* <h2>Response Form</h2> */}
+                { bid ? <BidResponseForm /> : <h2>Please Select an Available Bid</h2> }
             </div>
 
         </div>

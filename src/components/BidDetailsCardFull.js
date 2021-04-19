@@ -14,6 +14,8 @@ const BidDetailsCardFull = ({ bid }) => {
             <p>{`${bid.city}, ${bid.state}`}</p>
             <h6>When? (YYYY-MM-DD)</h6>
             <p>{`${bid.date}`}</p>
+            <h6>Notes</h6>
+            <p>{`${bid.notes}`}</p>
         </div>
     )
 
