@@ -22,7 +22,7 @@ const NavBar = () => {
                             <img src={logo} alt="your plan logo" width="32" height="24" className="d-inline-block align-text-top"/>
                         </div>
                         <div className="col-md-6">
-                            <ul className="nav">
+                            {/* <ul className="nav">
                                 <li className="nav-item nav-option">
                                     How?
                                 </li>
@@ -32,7 +32,7 @@ const NavBar = () => {
                                 <li className="nav-item nav-option">
                                     About
                                 </li>
-                            </ul>
+                            </ul> */}
                         </div>
                         <div className="col-md-4">
                             { profileDetails ? <LogOutButton /> : <LoginButtons /> }
