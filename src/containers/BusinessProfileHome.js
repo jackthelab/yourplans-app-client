@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 // containers
@@ -9,19 +9,21 @@ import { useSelector } from 'react-redux'
 const BusinessProfileHome = () => {
 
     const profileDetails = useSelector(state => state.profile)
-    const profile = profileDetails.profile
-
+    
+    const [businessBidResponses, setBusinessBidResponses] = useState(profileDetails.bid_responses.length)
+    const [businessExperiences, setBusinessExperiences] = useState(profileDetails.experiences.length)
+    
     return (
         
         <div className="row">
 
             <div className="sect-col col-md-4">
                 <h2>Bid Responses</h2>
-                <p>{`No. of Bid Responses: ${profileDetails.bid_responses.length}`}</p>
+                <p>{`No. of Bid Responses: ${ businessBidResponses }`}</p>
             </div>
             <div className="sect-col col-md-4">
                 <h2>Experiences</h2>
-                <p>{`No. of Experiences: ${profileDetails.experiences.length}`}</p>
+                <p>{`No. of Experiences: ${ businessExperiences }`}</p>
             </div>
             <div className="sect-col col-md-4">
                 <h2>Business Dashboard Stats</h2>
