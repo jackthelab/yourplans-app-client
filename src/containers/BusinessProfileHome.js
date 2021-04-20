@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 const BusinessProfileHome = () => {
 
     const profileDetails = useSelector(state => state.profile)
+    const profile = profileDetails.profile
 
     return (
         

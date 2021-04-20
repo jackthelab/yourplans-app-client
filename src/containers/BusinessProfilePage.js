@@ -14,7 +14,8 @@ const BusinessProfilePage = () => {
 
     const activityType = useSelector(state => state.activity)
     const profileDetails = useSelector(state => state.profile)
-    const [availableBids, setAvailableBids] = useState([])
+    const [availableBids, setAvailableBids] = useState(profileDetails.bids)
+    const [experiences, setExperiences] = useState(profileDetails.experiences)
 
     return (
 

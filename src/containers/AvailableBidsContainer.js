@@ -12,7 +12,7 @@ const AvailableBidsContainer = ({ availableBids }) => {
                 <h3>Open Bids</h3>
             </div>
             <div className="row">
-                { availableBids.map((bid, idx) => <SmallBidCard bid={ bid } idx={ idx } /> ) }
+                { availableBids ? availableBids.map((bid, idx) => <SmallBidCard bid={ bid } idx={ idx } /> ) : null }
             </div>
         </>
 
