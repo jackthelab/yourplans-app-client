@@ -9,7 +9,7 @@ const AvailableBidsContainer = ({ availableBids }) => {
 
         <>
             <div className="row">
-                <h2>Open Bids</h2>
+                <h3>Open Bids</h3>
             </div>
             <div className="row">
                 { availableBids.map((bid, idx) => <SmallBidCard bid={ bid } idx={ idx } /> ) }

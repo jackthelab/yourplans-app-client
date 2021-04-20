@@ -13,7 +13,7 @@ const SelectedBidDetailsContainer = () => {
 
         <>
             <div className="row">
-                <h2>Bid Details</h2>
+                <h3>Bid Details</h3>
             </div>
 
             <div className="row">

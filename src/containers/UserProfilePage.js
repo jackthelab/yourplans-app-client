@@ -8,6 +8,7 @@ import DoneWithActivityButton from '../components/DoneWithActivityButton'
 
 //containers
 import UserProfileHome from './UserProfileHome'
+import UserCloseBidContainer from './UserCloseBidContainer'
 
 const UserProfilePage = () => {
 
@@ -22,10 +23,12 @@ const UserProfilePage = () => {
                 { profileDetails ? <h1>{`Welcome, ${profileDetails.first_name}!`}</h1> : null }
             </div>
             <div className="row">
-                { profileDetails ? activity === 'createBid' ? <CreateBidForm /> : <UserProfileHome /> : null }
+                { profileDetails && activity === 'createBid' ? <CreateBidForm /> : null }
+                { profileDetails && activity === 'closeBid' ? <UserCloseBidContainer /> : null }
+                { profileDetails && !activity ? <UserProfileHome /> :  null }
             </div>
 
-            { activity === 'createBid' ? <DoneWithActivityButton /> : <MakePlansButton /> }
+            { activity ? <DoneWithActivityButton /> : <MakePlansButton /> }
 
         </div>
 

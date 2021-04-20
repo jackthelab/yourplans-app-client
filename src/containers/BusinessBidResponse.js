@@ -16,14 +16,13 @@ const BusinessBidResponse = ({ availableBids }) => {
 
         <div className="row">
 
-            <div className="sect-col col-md-3">
+            <div className="sect-col col-md-4">
                 <AvailableBidsContainer availableBids={ availableBids } />
             </div>
-            <div className="sect-col col-md-3">
+            <div className="sect-col col-md-4">
                 <SelectedBidDetailsContainer />
             </div>
-            <div className="sect-col col-md-6">
-                {/* <h2>Response Form</h2> */}
+            <div className="sect-col col-md-4">
                 { bid ? <BidResponseForm /> : <h2>Please Select an Available Bid</h2> }
             </div>
 

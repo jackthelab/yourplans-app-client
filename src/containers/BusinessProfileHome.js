@@ -20,7 +20,7 @@ const BusinessProfileHome = () => {
             </div>
             <div className="sect-col col-md-4">
                 <h2>Experiences</h2>
-                <p>{`No. of Experiences: ${profileDetails.bid_responses.length}`}</p>
+                <p>{`No. of Experiences: ${profileDetails.experiences.length}`}</p>
             </div>
             <div className="sect-col col-md-4">
                 <h2>Business Dashboard Stats</h2>

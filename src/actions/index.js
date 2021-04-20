@@ -25,3 +25,10 @@ export const setBid = (bid=null) => {
         bidPayload: bid
     }
 }
+
+export const setResponse = (response=null) => {
+    return {
+        type: 'SET_SELECTED_RESPONSE',
+        responsePayload: response
+    }
+}
