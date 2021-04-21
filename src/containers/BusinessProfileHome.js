@@ -25,14 +25,14 @@ const BusinessProfileHome = () => {
                 <p>{`No. of Bid Responses: ${ businessBidResponses }`}</p> */}
                 <BusinessBidResponsesContainer responses={ businessBidResponses } />
             </div>
-            <div className="row">
+            {/* <div className="row">
                 <h2>Business Dashboard Stats</h2>
                 <ul>
                     <li>Deals Won?</li>
                     <li>$ Amount Won?</li>
                     <li>Other Stats?</li>
                 </ul>
-            </div>
+            </div> */}
 
         </div>
 
