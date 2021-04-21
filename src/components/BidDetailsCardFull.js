@@ -4,7 +4,8 @@ const BidDetailsCardFull = ({ bid }) => {
 
     return (
         <div className="full-bid-card">
-            <h5>{bid.name}</h5>
+            <h5>{ `${ bid.name }` }</h5>
+            <p>{ `(${ bid.bid_responses.length } ${ bid.bid_responses.length !== 1 ? "Responses" : "Response" })` }</p>
             <hr></hr>
             <h6>Budget</h6>
             <p>{`$${bid.budget}`}</p>
