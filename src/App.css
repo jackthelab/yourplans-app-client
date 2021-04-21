@@ -139,6 +139,20 @@
   padding: .2rem;
 }
 
+@keyframes blinking {
+  0% {
+    background-color: #912323;
+  }
+  100% {
+    color: #f6f6f6;
+    background-color: #007965;
+  }
+}
+
+.blink {
+  animation: blinking 2s infinite;
+}
+
 /* ************************ IDs *************************** */
 
 #main-container {

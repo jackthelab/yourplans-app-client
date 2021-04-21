@@ -1,15 +1,16 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { setActivity, setBid, setResponse } from '../actions/index'
+import { setActivity, setBid, setResponse, setExperience } from '../actions/index'
 
 const DoneWithActivityButton = () => {
     
     const dispatch = useDispatch()
 
     const handleClick = () => {
-        dispatch(setActivity(null))
-        dispatch(setBid(null))
+        dispatch(setActivity())
+        dispatch(setBid())
         dispatch(setResponse())
+        dispatch(setExperience())
     }
 
     return (

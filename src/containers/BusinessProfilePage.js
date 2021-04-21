@@ -22,7 +22,7 @@ const BusinessProfilePage = () => {
         <div className="container" style={{ height: "auto" }}>
 
             <div className="row">
-                <h1>{`Welcome, ${profileDetails.name}`}</h1>
+                {/* <h1>{`Welcome, ${profileDetails.name}`}</h1> */}
             </div>
             <div className="row">
                 { activityType === "bidResponse" ? <BusinessBidResponse availableBids={availableBids} /> : <BusinessProfileHome /> }

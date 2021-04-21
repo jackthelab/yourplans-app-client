@@ -32,3 +32,10 @@ export const setResponse = (response=null) => {
         responsePayload: response
     }
 }
+
+export const setExperience = (experience=null) => {
+    return {
+        type: 'SET_SELECTED_EXPERIENCE',
+        experiencePayload: experience
+    }
+}

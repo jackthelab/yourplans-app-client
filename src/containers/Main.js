@@ -18,7 +18,7 @@ const Main = () => {
 
             { accountType === null ? <LandingPage /> : null }
             { accountType === "user" ? profileDetails && !profileDetails['message'] ? <UserProfilePage /> : <UserLoginPage /> : null }
-            { accountType === "business" ? profileDetails ? <BusinessProfilePage /> : <BusinessLoginPage /> : null }
+            { accountType === "business" ? profileDetails && !profileDetails['message'] ? <BusinessProfilePage /> : <BusinessLoginPage /> : null }
 
         </div>
     )

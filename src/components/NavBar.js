@@ -11,15 +11,16 @@ import LogOutButton from './LogOutButton'
 const NavBar = () => {
 
     const profileDetails = useSelector(state => state.profile)
+    const accountType = useSelector(state => state.accountType)
 
     return (
         <>
             <nav style={{ backgroundColor: "#007965", color: "#f6f6f6", paddingBottom: ".5rem", paddingTop: ".5rem" }}>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-2">
-                            <h6 className="logo-text">YourPlans</h6>
-                            <img src={logo} alt="your plan logo" width="32" height="24" className="d-inline-block align-text-top"/>
+                        <div className="col-md-3">
+                            <h6 className="nav-item logo-text">YourPlans</h6>
+                            <img src={logo} alt="your plan logo" width="32" height="24" className="nav-item d-inline-block align-text-top"/>
                         </div>
                         <div className="col-md-6">
                             {/* <ul className="nav">
@@ -33,9 +34,13 @@ const NavBar = () => {
                                     About
                                 </li>
                             </ul> */}
+                            { !profileDetails ? null : null }
+                            { profileDetails && profileDetails.first_name ? <h1 className="nav-item">{ `Welcome, ${ profileDetails.first_name }!` }</h1> : null }
+                            { profileDetails && profileDetails.name ? <h1 className="nav-item">{ `Welcome, ${ profileDetails.name }!` }</h1> : null }
+                            { profileDetails && profileDetails.message ? <h4 className="nav-item blink">Please Check Email and Password Are Correct</h4> : null }
                         </div>
-                        <div className="col-md-4">
-                            { profileDetails ? <LogOutButton /> : <LoginButtons /> }
+                        <div className="col-md-3">
+                            { profileDetails && !profileDetails.message ? <LogOutButton /> : <LoginButtons /> }
                         </div>
                     </div>
                 </div>

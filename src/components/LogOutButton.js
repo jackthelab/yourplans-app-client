@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { setAccountType, setProfile, setActivity } from '../actions/index'
+import { setAccountType, setProfile, setActivity, setBid, setResponse, setExperience } from '../actions/index'
 
 const LogOutButton = () => {
     
@@ -8,9 +8,12 @@ const LogOutButton = () => {
 
     return (
         <button onClick={() => {
-            dispatch(setAccountType(null))
-            dispatch(setProfile(null))
-            dispatch(setActivity(null))
+            dispatch(setAccountType())
+            dispatch(setProfile())
+            dispatch(setActivity())
+            dispatch(setBid())
+            dispatch(setResponse())
+            dispatch(setExperience())
             localStorage.token = null
             localStorage.id = null
             localStorage.loggedIn = false

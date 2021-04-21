@@ -20,7 +20,7 @@ const UserProfilePage = () => {
         <div className="container" style={{ height: "auto" }}>
 
             <div className="row">
-                { profileDetails ? <h1>{`Welcome, ${profileDetails.first_name}!`}</h1> : null }
+                {/* { profileDetails ? <h1>{`Welcome, ${profileDetails.first_name}!`}</h1> : null } */}
             </div>
             <div className="row">
                 { profileDetails && activity === 'createBid' ? <CreateBidForm /> : null }

@@ -1,5 +1,8 @@
 import React from 'react'
 
+// components
+import SelectExperienceButton from './SelectExperienceButton'
+
 const SmallExperienceCard = ({ experience, key }) => {
 
     return (
@@ -9,8 +12,8 @@ const SmallExperienceCard = ({ experience, key }) => {
             <p>{ `Under Budget: $${ experience.bid.budget - experience.bid_response.price } ( ${ (experience.bid.budget - experience.bid_response.price) / experience.bid.budget * 100 }% )` }</p>
             <p>{ `Category: ${ experience.bid_response.category }` }</p>
             <p>{ `Date (YYYY-MM-DD): ${ experience.bid.date }` }</p>
-            <p>{ `${ experience.bid.city }, ${ experience.bid.state }` }</p>
-            { !experience.complete ? <button className="btn cta-btn">Details</button> : <button className="btn cta-btn">Review</button> }
+            <p>{ `${ experience.bid_response.business.street_address } ${ experience.bid_response.business.city }, ${ experience.bid_response.business.state }` }</p>
+            { !experience.complete ? <SelectExperienceButton experience={ experience } /> : <button className="btn cta-btn">Review</button> }
         </div>
 
     )
