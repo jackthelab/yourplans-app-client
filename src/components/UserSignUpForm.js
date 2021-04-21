@@ -29,8 +29,12 @@ const UserSignUpForm = () => {
         fetch('http://localhost:3000/api/v1/users', reqObj)
             .then(r => r.json())
             .then(resData => {
-                fetchUserProfile(resData.jwt)
-                localStorage.token = resData.jwt
+                if(resData.jwt) {
+                    fetchUserProfile(resData.jwt)
+                    localStorage.token = resData.jwt
+                } else {
+                    dispatch(setProfile(resData))
+                }
             })
     }
 

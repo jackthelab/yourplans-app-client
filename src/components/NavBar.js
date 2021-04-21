@@ -37,10 +37,11 @@ const NavBar = () => {
                             { !profileDetails ? null : null }
                             { profileDetails && profileDetails.first_name ? <h1 className="nav-item">{ `Welcome, ${ profileDetails.first_name }!` }</h1> : null }
                             { profileDetails && profileDetails.name ? <h1 className="nav-item">{ `Welcome, ${ profileDetails.name }!` }</h1> : null }
-                            { profileDetails && profileDetails.message ? <h4 className="nav-item blink">Please Check Email and Password Are Correct</h4> : null }
+                            { profileDetails && profileDetails.message ? <p className="nav-item blink">Please check email and password are correct</p> : null }
+                            { profileDetails && profileDetails.error ? <p className="nav-item blink">Please make sure you're using a new email and your password is at least 10 characters long</p> : null }
                         </div>
                         <div className="col-md-3">
-                            { profileDetails && !profileDetails.message ? <LogOutButton /> : <LoginButtons /> }
+                            { profileDetails && !profileDetails.message && !profileDetails.error ? <LogOutButton /> : <LoginButtons /> }
                         </div>
                     </div>
                 </div>
