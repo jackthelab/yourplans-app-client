@@ -11,10 +11,11 @@ const SmallBidResponseCard = ({ response, idx }) => {
 
     return (
         <div key={idx} className="col-md-8 sm-bid-card">
-            <h6>{ response.business.name }</h6>
+            <h6>{ accountType === 'user' ? response.business.name : response.name }</h6>
             <p>{ `Price: $${response.price}` }</p>
             <p>{ `Category: ${response.category}` }</p>
-            { activity === 'closeBid' ? <SelectResponseButton response={ response } /> : null }
+            {/* { activity === 'closeBid' ? <SelectResponseButton response={ response } /> : null } */}
+            <SelectResponseButton response={ response } />
         </div>
     )
 

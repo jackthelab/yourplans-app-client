@@ -1,10 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const ResponseDetailsCardFull = ({ response }) => {
 
+    const accountType = useSelector(state => state.accountType)
+    const profile = useSelector(state => state.profile)
+
     return (
         <div className="full-bid-card">
-            <h5>{response.business.name}</h5>
+            <h5>{ accountType === 'user' ? response.business.name : profile.name }</h5>
             <hr></hr>
             <h6>Price</h6>
             <p>{`$${response.price}`}</p>
@@ -15,20 +19,20 @@ const ResponseDetailsCardFull = ({ response }) => {
             <h6>Who?</h6>
             <div>
                 <div>
-                    <a className="btn cta-btn social-link-btn" href={`${response.business.website}`}>Web</a>
+                    <a className="btn cta-btn social-link-btn" href={`${ accountType === 'user' ? response.business.website : profile.website }`}>Web</a>
                 </div>
                 <div>
-                    <a className="btn cta-btn social-link-btn" href={`${response.business.facebook}`}>"The Book"</a>
+                    <a className="btn cta-btn social-link-btn" href={`${ accountType === 'user' ? response.business.facebook : profile.facebook }`}>"The Book"</a>
                 </div>
                 <div>
-                    <a className="btn cta-btn social-link-btn" href={`${response.business.instagram}`}>"The Gram"</a>
+                    <a className="btn cta-btn social-link-btn" href={`${ accountType === 'user' ? response.business.instagram : profile.instagram }`}>"The Gram"</a>
                 </div>
                 <div>
-                    <p>{`Bio: ${response.business.bio}`}</p>
+                    <p>{`Bio: ${ accountType === 'user' ? response.business.bio : profile.bio}`}</p>
                 </div>
             </div>
             <h6>Where?</h6>
-            <p>{`${response.business.street_address} ${response.business.city}, ${response.business.state}`}</p>
+            <p>{`${ accountType === 'user' ? response.business.street_address : profile.street_address } ${ accountType === 'user' ? response.business.city : profile.city }, ${ accountType === 'user' ? response.business.state : profile.state }`}</p>
         </div>
     )
 
