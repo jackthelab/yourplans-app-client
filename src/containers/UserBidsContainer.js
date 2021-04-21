@@ -1,19 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 //components
 import SmallBidCard from '../components/SmallBidCard'
 
-const UserBidsContainer = ({ bids }) => {
+const UserBidsContainer = ({ bids }) => { 
+
+    const [openBids, setOpenBids] = useState(bids.filter(bid => bid.open_status))
+    const [closedBids, setClosedBids] = useState(bids.filter(bid => !bid.open_status))
 
     return (
 
         <>
-            <div className="row">
-                <h1>Bids</h1>
+            <div className="col-md-6 sect-col">
+                <div>
+                    <h1>Open Bids</h1>
+                </div>
+                <div>
+                    { openBids.map( (bid, idx) => <SmallBidCard bid={bid} idx={idx} /> ) }
+                </div>
             </div>
-        
-            <div className="row">
-                { bids.map( (bid, idx) => <SmallBidCard bid={bid} idx={idx} /> ) }
+            <div className="col-md-6 sect-col">
+                <div>
+                    <h1>Closed Bids</h1>
+                </div>        
+                <div>
+                    { closedBids.map( (bid, idx) => <SmallBidCard bid={bid} idx={idx} /> ) }
+                </div>
             </div>
         </>
 

@@ -14,10 +14,10 @@ const UserProfileHome = () => {
 
     return (
         <>
-            <div className="col-md-6 sect-col">
+            <div className="row">
                 <UserBidsContainer bids={ userBids } />
             </div>
-            <div className="sect-col col-md-6">
+            <div className="row">
                 <UserExperiencesContainer experiences={ userExperiences } />
             </div>
         </>

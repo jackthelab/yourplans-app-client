@@ -18,7 +18,7 @@ const SmallBidCard = ({ bid, idx }) => {
             <p>{ `${bid.city}, ${bid.state}` }</p>
             { activity === 'bidResponse' ? <SelectBidButton bid={ bid } /> : null }
             { accountType === 'user' && bid.open_status ? <CloseBidButton bid={ bid } /> : null }
-            { accountType === 'user' && !bid.open_status ? <button className="btn cta-btn">Closed</button> : null }
+            { accountType === 'user' && !bid.open_status ? <button className="btn cta-btn">Details</button> : null }
         </div>
     )
 
