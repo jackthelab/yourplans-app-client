@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setPendingResponsesList } from '../actions/index'
 
 // components
 import SmallBidResponseCard from '../components/SmallBidResponseCard'
 import ResponseDetailsCard from '../components/ResponseDetailsCardFull'
 
 const BusinessBidResponsesContainer = ({ responses }) => {
+
+    // const dispatch = useDispatch()
+
+    // dispatch(setPendingResponsesList(responses.filter( (res) => res.bid.open_status )))
+
+    // const pendingResponses = useSelector(state => state.pendingResponsesList)
 
     const [pendingResponses, setOpenResponses] = useState(responses.filter( (res) => res.bid.open_status ))
     const selectedResponse = useSelector(state => state.selectedResponse)
@@ -20,7 +27,7 @@ const BusinessBidResponsesContainer = ({ responses }) => {
                     <h1>Pending Responses</h1>
                 </div>
                 <div>
-                    { pendingResponses.length > 0 ? pendingResponses.map( (response, idx) => <SmallBidResponseCard response={ response } key={ idx } /> ) : <p>Looking for your next experience? Click the "See Open Bids" button below to get started!</p> }
+                    { pendingResponses && pendingResponses.length > 0 ? pendingResponses.map( (response, idx) => <SmallBidResponseCard response={ response } key={ idx } /> ) : <p>Looking for your next experience? Click the "See Open Bids" button below to get started!</p> }
                 </div>
             </div>
             <div className="sect-col col-md-6">

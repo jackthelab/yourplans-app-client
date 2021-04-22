@@ -5,9 +5,11 @@ import { useSelector } from 'react-redux'
 import SmallBidCard from '../components/SmallBidCard'
 import BidDetailsCardFull from '../components/BidDetailsCardFull'
 
-const UserBidsContainer = ({ bids }) => { 
+const UserBidsContainer = () => { 
 
-    const [openBids, setOpenBids] = useState(bids.filter(bid => bid.open_status))
+    const openBids = useSelector(state => state.openBidsList)
+
+    // const [openBids, setOpenBids] = useState(bids.filter(bid => bid.open_status))
     // const [closedBids, setClosedBids] = useState(bids.filter(bid => !bid.open_status))
 
     const selectedBid = useSelector(state => state.selectedBid)

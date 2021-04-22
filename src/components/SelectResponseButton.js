@@ -7,7 +7,7 @@ const SelectResponseButton = ({ response }) => {
     const dispatch = useDispatch()
 
     const handleClick = () => {
-        console.log(response)
+        // console.log(response)
         dispatch(setResponse(response))
     }
 

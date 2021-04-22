@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setPendingResponsesList } from '../actions/index'
 
 const BidResponseForm = () => {
 
+    const dispatch = useDispatch()
+
     const currentBusiness = useSelector(state => state.profile)
     const selectedBid = useSelector(state => state.selectedBid)
+    const pendingResponsesList = useSelector(state => state.pendingResponsesList)
 
     const [price, setPrice] = useState(null)
     const [category, setCategory] = useState(null)
@@ -36,6 +40,7 @@ const BidResponseForm = () => {
         fetch(`http://localhost:3000/api/v1/businesses/${currentBusiness.id}/bid_responses`, reqObj)
             .then(res => res.json())
             .then(brData => {
+                dispatch(setPendingResponsesList(pendingResponsesList.push(brData)))
                 e.target.reset()
             })
 
