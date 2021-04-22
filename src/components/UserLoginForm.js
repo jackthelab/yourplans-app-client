@@ -36,10 +36,12 @@ const UserLoginForm = () => {
             .then(r => r.json())
             .then(resData => {
                 dispatch(setProfile(resData))
-                const openBids = resData.bids.filter( (bid) => bid.open_status )
-                // console.log(openBids)
-                dispatch(setOpenBidsList(openBids))
-                dispatch(setExperiencesList(resData.experiences))
+                if(!resData.message && !resData.error) {
+                    const openBids = resData.bids.filter( (bid) => bid.open_status )
+                    // console.log(openBids)
+                    dispatch(setOpenBidsList(openBids))
+                    dispatch(setExperiencesList(resData.experiences))
+                }
             })
     }
 
