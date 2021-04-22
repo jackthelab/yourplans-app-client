@@ -13,7 +13,7 @@ const SmallExperienceCard = ({ experience, key }) => {
             <p>{ `Category: ${ experience.bid_response.category }` }</p>
             <p>{ `Date (YYYY-MM-DD): ${ experience.bid.date }` }</p>
             <p>{ `${ experience.bid_response.business.street_address } ${ experience.bid_response.business.city }, ${ experience.bid_response.business.state }` }</p>
-            { !experience.complete ? <SelectExperienceButton experience={ experience } /> : <button className="btn cta-btn">Review</button> }
+            {/* { !experience.complete ? <SelectExperienceButton experience={ experience } /> : <button className="btn cta-btn">Review</button> } */}
         </div>
 
     )
