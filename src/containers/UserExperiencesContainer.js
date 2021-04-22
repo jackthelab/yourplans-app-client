@@ -23,7 +23,7 @@ const UserExperiencesContainer = () => {
                 <div>
                     {/* { futureExperiences.length > 0 ? futureExperiences.map( (experience, idx) => <SmallExperienceCard experience={ experience } key={ idx } /> ) : <p>Looking for your next adventure? Click the "Make a Plan!" button below to get started!</p> } */}
                     { experiences ? experiences.filter( exp => !exp.complete ).map( (experience, idx) => <SmallExperienceCard experience={ experience } key={ idx } /> ) : <p>Looking for you your next adventure? Click the "Make a Plan!" button below to get started!</p> }
-                    { console.log(experiences.filter(exp => !exp.complete)) }
+                    {/* { console.log(experiences.filter(exp => !exp.complete)) } */}
                 </div>
             </div>
             <div className="sect-col col-md-6">

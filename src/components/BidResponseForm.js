@@ -40,7 +40,7 @@ const BidResponseForm = () => {
         fetch(`http://localhost:3000/api/v1/businesses/${currentBusiness.id}/bid_responses`, reqObj)
             .then(res => res.json())
             .then(brData => {
-                dispatch(setPendingResponsesList(pendingResponsesList.push(brData)))
+                dispatch(setPendingResponsesList([...pendingResponsesList, brData]))
                 e.target.reset()
             })
 

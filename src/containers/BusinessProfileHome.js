@@ -18,12 +18,14 @@ const BusinessProfileHome = () => {
         <div>
 
             <div className="row">                
-                <BusinessExperiencesContainer experiences={ businessExperiences } />
+                {/* <BusinessExperiencesContainer experiences={ businessExperiences } /> */}
+                <BusinessExperiencesContainer />
             </div>
             <div className="row">
                 {/* <h2>Bid Responses</h2>
                 <p>{`No. of Bid Responses: ${ businessBidResponses }`}</p> */}
-                <BusinessBidResponsesContainer responses={ businessBidResponses } />
+                {/* <BusinessBidResponsesContainer responses={ businessBidResponses } /> */}
+                <BusinessBidResponsesContainer />
             </div>
             {/* <div className="row">
                 <h2>Business Dashboard Stats</h2>
