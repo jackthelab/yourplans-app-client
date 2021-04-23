@@ -11,7 +11,7 @@ const BidResponseForm = () => {
     const pendingResponsesList = useSelector(state => state.pendingResponsesList)
 
     const [price, setPrice] = useState(null)
-    const [category, setCategory] = useState(null)
+    const [category, setCategory] = useState("Dining")
     const [details, setDetails] = useState(null)
 
     const handleSubmit = (e) => {
