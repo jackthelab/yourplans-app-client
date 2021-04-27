@@ -1,11 +1,13 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setResponse, setBid, setActivity } from '../actions/index'
+import { setResponse, setBid, setActivity, setOpenBidsList, setExperiencesList } from '../actions/index'
 
 const AwardDecisionButtons = () => {
 
     const selectedBid = useSelector(state => state.selectedBid)
     const selectedResponse = useSelector(state => state.selectedResponse)
+    const openBidsList = useSelector(state => state.openBidsList)
+    const experiencesList = useSelector(state => state.experiencesList)
 
     const dispatch = useDispatch()
 
@@ -35,6 +37,7 @@ const AwardDecisionButtons = () => {
                 dispatch(setResponse())
                 dispatch(setBid())
                 dispatch(setActivity())
+                dispatch(setExperiencesList([...experiencesList, expData]))
             })
 
         closeBid()
@@ -68,6 +71,8 @@ const AwardDecisionButtons = () => {
                 console.log(bidData)
                 dispatch(setBid())
                 dispatch(setActivity())
+                const newOpenBids = openBidsList.filter( bid => bid.id !== bidData.id)
+                dispatch(setOpenBidsList(newOpenBids))
             })
 
     }

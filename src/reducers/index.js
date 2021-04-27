@@ -4,6 +4,9 @@ import profileReducer from './profile'
 import selectedBidReducer from './selectedBid'
 import selectedResponseReducer from './selectedResponse'
 import selectedExperienceReducer from './selectedExperience'
+import openBidsListReducer from './openBidsList'
+import pendingResponsesListReducer from './pendingResponsesList'
+import experiencesListReducer from './experiencesList'
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
@@ -12,7 +15,10 @@ const rootReducer = combineReducers({
     profile: profileReducer,
     selectedBid: selectedBidReducer,
     selectedResponse: selectedResponseReducer,
-    selectedExperience: selectedExperienceReducer
+    selectedExperience: selectedExperienceReducer,
+    openBidsList: openBidsListReducer,
+    pendingResponsesList: pendingResponsesListReducer,
+    experiencesList: experiencesListReducer
 })
 
 

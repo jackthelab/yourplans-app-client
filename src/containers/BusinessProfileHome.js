@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 // containers
 import BusinessBidResponsesContainer from './BusinessBidResponsesContainer'
@@ -18,12 +18,14 @@ const BusinessProfileHome = () => {
         <div>
 
             <div className="row">                
-                <BusinessExperiencesContainer experiences={ businessExperiences } />
+                {/* <BusinessExperiencesContainer experiences={ businessExperiences } /> */}
+                <BusinessExperiencesContainer />
             </div>
             <div className="row">
                 {/* <h2>Bid Responses</h2>
                 <p>{`No. of Bid Responses: ${ businessBidResponses }`}</p> */}
-                <BusinessBidResponsesContainer responses={ businessBidResponses } />
+                {/* <BusinessBidResponsesContainer responses={ businessBidResponses } /> */}
+                <BusinessBidResponsesContainer />
             </div>
             {/* <div className="row">
                 <h2>Business Dashboard Stats</h2>

@@ -39,3 +39,24 @@ export const setExperience = (experience=null) => {
         experiencePayload: experience
     }
 }
+
+export const setOpenBidsList = (bidsList=[]) => {
+    return {
+        type: 'SET_OPEN_BIDS_LIST',
+        bidsListPayload: bidsList
+    }
+}
+
+export const setPendingResponsesList = (responsesList=[]) => {
+    return {
+        type: 'SET_PENDING_RESPONSES_LIST',
+        pendingResponsesListPayload: responsesList
+    }
+}
+
+export const setExperiencesList = (experiencesList=[]) => {
+    return {
+        type: 'SET_EXPERIENCES_LIST',
+        experiencesListPayload: experiencesList
+    }
+}

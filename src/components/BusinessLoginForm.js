@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { setProfile } from '../actions/index'
+import { setProfile, setPendingResponsesList, setExperiencesList } from '../actions/index'
 
 const BusinessLoginForm = () => {
 
@@ -38,6 +38,11 @@ const BusinessLoginForm = () => {
             .then(r => r.json())
             .then(resData => {
                 dispatch(setProfile(resData))
+                if(!resData.message && !resData.error) {
+                    const pendingResponses = resData.bid_responses.filter( br => br.bid.open_status )
+                    dispatch(setPendingResponsesList(pendingResponses))
+                    dispatch(setExperiencesList(resData.experiences))
+                }
             })
     }
 

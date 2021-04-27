@@ -10,12 +10,14 @@ const ResponseDetailsCardFull = ({ response }) => {
         <div className="full-bid-card">
             <h5>{ accountType === 'user' ? response.business.name : profile.name }</h5>
             <hr></hr>
+            { accountType === 'business' && response.bid.name  ? <h6>Bid Name</h6> : null }
+            { accountType === 'business' && response.bid.name ? <p>{ response.bid.name }</p> : null }
             <h6>Price</h6>
-            <p>{`$${response.price}`}</p>
+            <p>{ `$${response.price}` }</p>
             <h6>Category</h6>
-            <p>{`${response.category} people`}</p>
+            <p>{ `${response.category}` }</p>
             <h6>What?</h6>
-            <p>{`${response.details}`}</p>
+            <p>{ `${response.details}` }</p>
             <h6>Who?</h6>
             <div>
                 <div>

@@ -5,9 +5,11 @@ import { useSelector } from 'react-redux'
 import SmallBidCard from '../components/SmallBidCard'
 import BidDetailsCardFull from '../components/BidDetailsCardFull'
 
-const UserBidsContainer = ({ bids }) => { 
+const UserBidsContainer = () => { 
 
-    const [openBids, setOpenBids] = useState(bids.filter(bid => bid.open_status))
+    const openBids = useSelector(state => state.openBidsList)
+
+    // const [openBids, setOpenBids] = useState(bids.filter(bid => bid.open_status))
     // const [closedBids, setClosedBids] = useState(bids.filter(bid => !bid.open_status))
 
     const selectedBid = useSelector(state => state.selectedBid)
@@ -23,7 +25,7 @@ const UserBidsContainer = ({ bids }) => {
                     <h3>Open</h3>
                 </div>
                 <div>
-                    { openBids.length > 0 ? openBids.map( (bid, idx) => <SmallBidCard bid={bid} key={idx} /> ): <p>Looking for your next adventure? Click the "Make a Plan!" button below to get started!</p> }
+                    { openBids.length > 0 ? openBids.map( (bid, idx) => <SmallBidCard bid={ bid } key={ idx } /> ): <p>Looking for your next adventure? Click the "Make a Plan!" button below to get started!</p> }
                 </div>
             </div>
             <div className="col-md-6 sect-col">

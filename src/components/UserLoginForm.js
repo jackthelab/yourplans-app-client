@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { setProfile } from '../actions/index'
+import { setProfile, setOpenBidsList, setExperiencesList } from '../actions/index'
 
 const UserLoginForm = () => {
 
@@ -36,6 +36,12 @@ const UserLoginForm = () => {
             .then(r => r.json())
             .then(resData => {
                 dispatch(setProfile(resData))
+                if(!resData.message && !resData.error) {
+                    const openBids = resData.bids.filter( (bid) => bid.open_status )
+                    // console.log(openBids)
+                    dispatch(setOpenBidsList(openBids))
+                    dispatch(setExperiencesList(resData.experiences))
+                }
             })
     }
 
