@@ -14,6 +14,7 @@ const SmallExperienceCard = ({ experience, key }) => {
             <p>{ experience.bid ? `Date (YYYY-MM-DD): ${ experience.bid.date }` : null }</p>
             <p>{ experience.bid ? `${ experience.bid_response.business.street_address } ${ experience.bid_response.business.city }, ${ experience.bid_response.business.state }` : <h1>Your New Experience was just created!</h1> }</p>
             {/* { !experience.complete ? <SelectExperienceButton experience={ experience } /> : <button className="btn cta-btn">Review</button> } */}
+            <SelectExperienceButton experience={ experience } />
         </div>
 
     )
