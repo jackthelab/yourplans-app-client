@@ -38,7 +38,6 @@ const UserLoginForm = () => {
                 dispatch(setProfile(resData))
                 if(!resData.message && !resData.error) {
                     const openBids = resData.bids.filter( (bid) => bid.open_status )
-                    // console.log(openBids)
                     dispatch(setOpenBidsList(openBids))
                     dispatch(setExperiencesList(resData.experiences))
                 }
