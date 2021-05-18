@@ -23,17 +23,6 @@ const NavBar = () => {
                             <img src={logo} alt="your plan logo" width="32" height="24" className="nav-item d-inline-block align-text-top"/>
                         </div>
                         <div className="col-md-6">
-                            {/* <ul className="nav">
-                                <li className="nav-item nav-option">
-                                    How?
-                                </li>
-                                <li className="nav-item nav-option">
-                                    Where?
-                                </li>
-                                <li className="nav-item nav-option">
-                                    About
-                                </li>
-                            </ul> */}
                             { !profileDetails ? null : null }
                             { profileDetails && profileDetails.first_name ? <h1 className="nav-item">{ `Welcome, ${ profileDetails.first_name }!` }</h1> : null }
                             { profileDetails && profileDetails.name ? <h1 className="nav-item">{ `Welcome, ${ profileDetails.name }!` }</h1> : null }
